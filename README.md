@@ -1,4 +1,4 @@
-# There are multiple plugins/blocks in this add-ons repository
+# There are multiple plugins/blocks in this add-ons repository, using react
 
 ## Subscribers
 - This widget plugin displays the youtube subscribers of any channel inserted by the admin
