@@ -1,0 +1,98 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Codeable Feedback Form\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-28 16:13+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: \n"
+"Language: \n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Version: 2.5.5; wp-5.8.2\n"
+"X-Domain: cdfeedback-form"
+
+#. Name of the plugin
+msgid "Codeable Feedback Form"
+msgstr ""
+
+#: inc/CdFeedbackForm.php:93 inc/CdFeedbackForm.php:176
+#: inc/CdFeedbackForm.php:265
+msgid "Email"
+msgstr ""
+
+#: inc/CdFeedbackForm.php:85 inc/CdFeedbackForm.php:174
+msgid "First Name"
+msgstr ""
+
+#: inc/CdFeedbackForm.php:259
+msgid "Form Full Details"
+msgstr ""
+
+#. URI of the plugin
+#. Author URI of the plugin
+msgid "https://www.linkedin.com/in/pooja-paul/"
+msgstr ""
+
+#: inc/CdFeedbackForm.php:255
+msgid "Incorrect form id!"
+msgstr ""
+
+#: inc/CdFeedbackForm.php:89 inc/CdFeedbackForm.php:175
+msgid "Last Name"
+msgstr ""
+
+#: inc/CdFeedbackForm.php:101 inc/CdFeedbackForm.php:267
+msgid "Message"
+msgstr ""
+
+#: inc/CdFeedbackForm.php:264
+msgid "Name"
+msgstr ""
+
+#: inc/CdFeedbackForm.php:220
+msgid "Next page"
+msgstr ""
+
+#: inc/CdFeedbackForm.php:203
+msgid "Pages"
+msgstr ""
+
+#. Author of the plugin
+msgid "Pooja Paul"
+msgstr ""
+
+#: inc/CdFeedbackForm.php:210
+msgid "Previous page"
+msgstr ""
+
+#: inc/CdFeedbackForm.php:97 inc/CdFeedbackForm.php:177
+#: inc/CdFeedbackForm.php:266
+msgid "Subject"
+msgstr ""
+
+#: inc/CdFeedbackForm.php:82
+msgid "Submit your feedback"
+msgstr ""
+
+#: inc/CdFeedbackForm.php:312
+msgid "Thank you for sending us your feedback"
+msgstr ""
+
+#. Description of the plugin
+msgid ""
+"This plugin contains a form for users to share their feedbacks and all users "
+"list is available for the administrator."
+msgstr ""
+
+#: inc/CdFeedbackForm.php:203
+msgid "Total"
+msgstr ""
+
+#: inc/CdFeedbackForm.php:285
+msgid "You are not authorized to view the content of this page."
+msgstr ""

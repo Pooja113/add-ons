@@ -1,0 +1,82 @@
+.cdfeedback-form-section {
+  display: block;
+  width: 100%;
+  padding: 12px 30px 5px;
+  border: 2px solid #eee;
+  box-shadow: 6px 7px #f9f8f8;
+  margin: auto !important;
+}
+.cdfeedback-form-section label {
+  display: block;
+  font-size: 15px;
+  font-weight: 600;
+  margin: 0 0 0.5rem 0;
+}
+.cdfeedback-form-section input[type="text"],
+.cdfeedback-form-section input[type="email"] {
+  max-width: 100%;
+  width: 100%;
+  font-size: 14px;
+}
+
+.cdfeedback-form-section .cdfeedback-form div {
+  margin-bottom: 10px;
+}
+.btn-cdfeedback-form {
+  padding-top: 15px;
+}
+.cdfeedback-form-message {
+  padding: 5px;
+  color: green;
+  font-weight: bold;
+}
+.pagination-links {
+  float: right;
+}
+.button.disabled {
+  color: #a0a5aa !important;
+  border-color: #ddd !important;
+  background: #f7f7f7 !important;
+  box-shadow: none !important;
+  cursor: default;
+  transform: none !important;
+  text-decoration: none !important;
+}
+.form-short-details td,
+.form-short-details td:hover {
+  cursor: pointer;
+}
+
+.pagination-links .button {
+  padding: 5px 12px;
+  display: inline-flex;
+  background: gray;
+}
+.pagination-links a.button {
+  background: #c8f1b5;
+  text-decoration: none;
+}
+.cdfeedback-form-data-section table th,
+.cdfeedback-form-data-section table td {
+  padding: 10px 5px;
+  border-bottom: 1px solid #eee;
+}
+
+.cdfeedback-form-data-section table td,
+.cdfeedback-form-data-section table th {
+  text-align: left;
+}
+
+.cdfeedback-form-data-section table tr {
+  font-size: 15px;
+}
+
+.error {
+  color: #d8000c;
+}
+
+.full-form-details {
+  border: 1px solid #eee;
+  padding: 10px;
+  box-shadow: 5px 5px #eee;
+}
