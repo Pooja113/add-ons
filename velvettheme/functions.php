@@ -1,7 +1,6 @@
 <?php
 /**
  *
- * This is the template contains header section
  *
  * @package velvettheme
  */
@@ -24,3 +23,22 @@ function register_my_menu() {
 add_theme_support( 'custom-header' );
 
 add_theme_support( 'custom-logo' );
+add_theme_support( 'post-thumbnails' );
+
+
+function velvet_custom_post_type() {
+  register_post_type('books',
+      array(
+          'labels'      => array(
+              'name'          => __( 'Books', 'velvettheme' ),
+              'singular_name' => __( 'Books', 'velvettheme' ),
+          ),
+          'public'      => true,
+          'has_archive' => true,
+          'rewrite'     => array( 'slug' => 'books' ),
+          'supports'  => array('title','editor','excerpt','author', 'thumbnail','comments')
+      )
+  );
+}
+add_action('init', 'velvet_custom_post_type');
+
