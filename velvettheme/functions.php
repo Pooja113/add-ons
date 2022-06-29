@@ -42,3 +42,18 @@ function velvet_custom_post_type() {
 }
 add_action('init', 'velvet_custom_post_type');
 
+
+// function velvet_add_custom_box() {
+//   $screens = [ 'post', 'books' ];
+//   foreach ( $screens as $screen ) {
+//       add_meta_box(
+//           'author_box_id',                 // Unique ID
+//           'Author',      // Box title
+//           'author_custom_box_html',  // Content callback, must be of type callable
+//           $screen                            // Post type
+//       );
+//   }
+// }
+// add_action( 'add_meta_boxes', 'velvet_add_custom_box' );
+
+
