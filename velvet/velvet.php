@@ -43,3 +43,43 @@ function velvet_deactivate() {
 }
 register_deactivation_hook( __FILE__, 'velvet_deactivate' );
 
+
+
+
+add_action( 'admin_menu', 'velvet_options_page' );
+function velvet_options_page() {
+    add_menu_page(
+        'Velvet',
+        'Velvet Options',
+        'manage_options',
+        'velvetop',
+        'velvet_options_page_html',
+        'dashicons-dashboard',
+        20
+    );
+    add_submenu_page(
+      'velvetop',
+      'Settings Options',
+      'Settings Options',
+      'manage_options',
+      'velvetsetting',
+      'velvet_suboptions_page_html'
+  );
+}
+
+
+function velvet_options_page_html() {
+  if ( ! current_user_can( 'manage_options' ) ) {
+    return;
+  }
+  require_once plugin_dir_path(__FILE__) . 'admin/view.php';
+
+}
+
+function velvet_suboptions_page_html() {
+  if ( ! current_user_can( 'manage_options' ) ) {
+    return;
+  }
+  echo 'test';
+
+}
