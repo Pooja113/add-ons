@@ -27,8 +27,7 @@ add_theme_support( 'custom-header' );
 
 add_theme_support( 'custom-logo' );
 add_theme_support( 'post-thumbnails' );
-add_theme_support( 'automatic-feed-links' );
-load_theme_textdomain( 'myfirsttheme', get_template_directory() . '/languages' );
+//load_theme_textdomain( 'myfirsttheme', get_template_directory() . '/languages' );
 add_theme_support( 'title-tag' );
 
 
@@ -159,3 +158,130 @@ function wpdocs_theme_slug_widgets_init() {
   ) );
 }
 add_action( 'widgets_init', 'wpdocs_theme_slug_widgets_init' );
+
+class My_Widget extends WP_Widget {
+ 
+  function __construct() {
+
+      parent::__construct(
+          'my-text',  // Base ID
+          'My Text'   // Name
+      );
+
+      add_action( 'widgets_init', function() {
+          register_widget( 'My_Widget' );
+      });
+
+  }
+
+  public $args = array(
+      'before_title'  => '<h4 class="widgettitle">',
+      'after_title'   => '</h4>',
+      'before_widget' => '<div class="widget-wrap">',
+      'after_widget'  => '</div></div>'
+  );
+
+  public function widget( $args, $instance ) {
+
+      echo $args['before_widget'];
+
+      if ( ! empty( $instance['title'] ) ) {
+          echo $args['before_title'] . apply_filters( 'widget_title', $instance['title'] ) . $args['after_title'];
+      }
+
+      echo '<div class="textwidget">';
+
+      echo esc_html__( $instance['text'], 'text_domain' );
+
+      echo '</div>';
+
+      echo $args['after_widget'];
+
+  }
+
+  public function form( $instance ) {
+
+      $title = ! empty( $instance['title'] ) ? $instance['title'] : esc_html__( '', 'text_domain' );
+      $text = ! empty( $instance['text'] ) ? $instance['text'] : esc_html__( '', 'text_domain' );
+      ?>
+      <p>
+      <label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php echo esc_html__( 'Title:', 'text_domain' ); ?></label>
+          <input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>">
+      </p>
+      <p>
+          <label for="<?php echo esc_attr( $this->get_field_id( 'Text' ) ); ?>"><?php echo esc_html__( 'Text:', 'text_domain' ); ?></label>
+          <textarea class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'text' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'text' ) ); ?>" type="text" cols="30" rows="10"><?php echo esc_attr( $text ); ?></textarea>
+      </p>
+      <?php
+
+  }
+
+  public function update( $new_instance, $old_instance ) {
+
+      $instance = array();
+
+      $instance['title'] = ( !empty( $new_instance['title'] ) ) ? strip_tags( $new_instance['title'] ) : '';
+      $instance['text'] = ( !empty( $new_instance['text'] ) ) ? $new_instance['text'] : '';
+
+      return $instance;
+  }
+
+}
+$my_widget = new My_Widget();
+
+
+
+class Foo_Widget extends WP_Widget {
+ 
+  /**
+   * Register widget with WordPress.
+   */
+  public function __construct() {
+      parent::__construct(
+          'foo_widget', // Base ID
+          'Foo_Widget', // Name
+          array( 'description' => __( 'A Foo Widget', 'text_domain' ), ) // Args
+      );
+      add_action( 'widgets_init', function() {
+        register_widget( 'Foo_Widget' );
+    });
+  }
+
+  public function widget( $args, $instance ) {
+      extract( $args );
+      $title = apply_filters( 'widget_title', $instance['title'] );
+
+      echo $before_widget;
+      if ( ! empty( $title ) ) {
+          echo $before_title . $title . $after_title;
+      }
+      echo __( 'Hello, World!', 'text_domain' );
+      echo $after_widget;
+  }
+
+
+  public function form( $instance ) {
+      if ( isset( $instance[ 'title' ] ) ) {
+          $title = $instance[ 'title' ];
+      }
+      else {
+          $title = __( 'New title', 'text_domain' );
+      }
+      ?>
+      <p>
+          <label for="<?php echo $this->get_field_name( 'title' ); ?>"><?php _e( 'Title:' ); ?></label>
+          <input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>" />
+       </p>
+  <?php
+  }
+
+  public function update( $new_instance, $old_instance ) {
+      $instance = array();
+      $instance['title'] = ( !empty( $new_instance['title'] ) ) ? strip_tags( $new_instance['title'] ) : '';
+
+      return $instance;
+  }
+
+} 
+
+$my_widget1 = new Foo_Widget();
