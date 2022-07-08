@@ -1,7 +1,7 @@
 <?php 
- if ( ! current_user_can( 'manage_options' ) ) {
-  return;
-}
+//  if ( ! current_user_can( 'manage_options' ) ) {
+//   return;
+// }
 
 if ( isset( $_GET['settings-updated'] ) ) {
   add_settings_error( 'wporg_messages', 'wporg_message', __( 'Settings Saved', 'wporg' ), 'updated' );
